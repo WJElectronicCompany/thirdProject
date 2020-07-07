@@ -1,0 +1,31 @@
+@CHARSET "utf-8"
+BODY {
+FONT-SIZE : 9pt; COLOR : black; LIne-height : 160%; font-family :;
+}
+TD {
+FONT-SIZE : 9pt; COLOR : black; LIne-height : 160%; font-family :;
+}
+SELECT {
+FONT-SIZE : 9pt; COLOR : black; LIne-height : 160%; font-family :;
+}
+DIV {
+FONT-SIZE : 9pt; COLOR : black; LIne-height : 160%; font-family :;
+}
+FORM {
+FONT-SIZE : 9pt; COLOR : black; LIne-height : 160%; font-family :;
+}
+TEXTAREA {
+border-right: 1px solid #999999; BORDER-TOP: 1px solid #999999;
+font-size: 9px; border-left: 1px solid #999999; color: black;
+border-bottom: 1px solid #999999; font-family:;
+background-color: white;
+}
+INPUT {
+	border-right: 1px solid #999999; border-top: 1px solid #999999;
+	font-size: 9px; border-left: 1px solid #999999; color: balck;
+	border-bottom: 1px solid #999999; font-family:;
+	background-color: white;
+}
+A:link {text-decoration: nonecolor:#696969}
+A:hover {text-decoration: yescolor:#66CCFF}
+A:visited {text-decoration: nonecolor:#330066}
