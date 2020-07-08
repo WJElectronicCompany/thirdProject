@@ -57,5 +57,10 @@ public class ClientVO {
 	public void setAddress2(String address2) {
 		this.address2 = address2;
 	}
+	@Override
+	public String toString() {
+		return "ClientVO [id=" + id + ", pw=" + pw + ", name=" + name + ", tel=" + tel + ", email=" + email
+				+ ", zipcode=" + zipcode + ", address1=" + address1 + ", address2=" + address2 + "]";
+	}
 	
 }

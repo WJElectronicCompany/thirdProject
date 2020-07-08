@@ -27,7 +27,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="enterpriseInfoForm.jsp">기업정보</a></li>
-				<li><a href="productListForm.jsp">판매목록</a></li>
+				<li><a href="/WJElectronics/client/productListForm.do?category=all&pageNum=1">판매목록</a></li>
 				<li><a href="asListForm.jsp">AS센터</a></li>
 				<li><a href="/WJElectronics/client/cliNotice.do?pagenumber=1">공지사항</a></li>
 			</ul>
@@ -44,7 +44,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false"> ${sessionScope.id } 님 <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">내 정보</a></li>
+							<li><a href="/WJElectronics/client/mypage.do?id=${sessionScope.id }">내 정보</a></li>
 							<li><a href="logout.jsp">로그아웃</a></li>
 						</ul>
 					</li>

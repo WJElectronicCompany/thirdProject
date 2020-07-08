@@ -39,11 +39,11 @@
 				</c:if>
 				<c:if test="${sessionScope.id != null }">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle"
+						<a href="mypageForm.jsp" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false"> ${sessionScope.id } 님 <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">내 정보</a></li>
+							<li><a href="/WJElectronics/client/mypage.do?id=${sessionScope.id }">내 정보</a></li>
 							<li><a href="logout.jsp">로그아웃</a></li>
 						</ul>
 					</li>

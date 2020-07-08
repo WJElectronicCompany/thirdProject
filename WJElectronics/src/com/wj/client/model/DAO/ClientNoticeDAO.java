@@ -36,7 +36,7 @@ public class ClientNoticeDAO {
 		try {
 			conn = ConnUtil.getConnection();
 			pstmt = conn.prepareStatement(
-					"SELECT clno, title, sdate FROM Cli_Notice WHERE clno < ? ORDER BY clno DESC LIMIT 10");
+					"SELECT clno, title, sdate FROM Cli_Notice WHERE clno < ? ORDER BY clno LIMIT 10");
 			
 			pstmt.setInt(1, getNum() - (pageNumber -1) * 10);
 			rs = pstmt.executeQuery();
