@@ -15,8 +15,8 @@ public class CliNoticeAction implements CommandAction {
 		
 		ClientNoticeDAO clientNoticeDao = ClientNoticeDAO.getInstance();
 		
-		
-		ArrayList<ClientNoticeVO> result  = clientNoticeDao.getNoticeList();
+		int i = Integer.parseInt(request.getParameter("pagenumber"));
+		ArrayList<ClientNoticeVO> result  = clientNoticeDao.getNoticeList(i);
 		request.setAttribute("vo", result);
 		
 		return "/client/noticeForm.jsp";
