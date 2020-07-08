@@ -45,7 +45,6 @@ public class ClientNoticeDAO {
 				cn.setTitle(rs.getString("title"));
 				Date d = new Date(rs.getDate("sdate").getTime());
 				cn.setSdate(d);
-				System.out.println(rs.getString("title"));
 				arr.add(cn);
 			}
 		} catch (SQLException e) {

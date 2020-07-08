@@ -19,7 +19,6 @@ public class CliNoticeAction implements CommandAction {
 		ArrayList<ClientNoticeVO> result  = clientNoticeDao.getNoticeList();
 		request.setAttribute("vo", result);
 		
-		System.out.println(result);
 		return "/client/noticeForm.jsp";
 	}
 }

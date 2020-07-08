@@ -65,15 +65,16 @@
 				</tr>
 				</thread>
 				<tbody>
-					<c:if test=${not empty vo}>
-						<c: forEach var="item" items="${vo}">
+					
+					 <c:if test="${not empty vo}"> 
+						<c:forEach var="item" items="${vo}">
 							<tr>
-								<td>${item.getClno()}</td>
-								<td>${item.getTitle()}</td>
-								<td>${item.getSdate()}</td>
+								<td><c:out value="${item.clno}"/></td>
+								<td><c:out value="${item.title}"/></td>
+								<td><c:out value="${item.sdate}"/></td>
 							</tr>
-						</c:>
-					</c:if>
+						 </c:forEach>
+					 </c:if> 
 				</tbody>
 			</table>
 		</div>
