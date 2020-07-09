@@ -13,18 +13,38 @@ nav ul{padding-top:10px;}
     background-color: #74e2fe;
     /* border-color: #74e2fe; */
 }
-#topNav {
+/* #topNav {
    width:100%;
    position:fixed;
    top:0;
    left:0;
-}
-/* * {
-    margin: 0;
 } */
+
 html, body {
+	 margin: 0;
     height: 100%;
 }
+
+* {
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+}
+.container {
+min-height: 100%;
+position: relative;
+padding-bottom: 19px; /* footer height */
+}
+ol {
+margin: 0;
+}
+footer {
+position: relative;
+bottom: 0;
+left: 0;
+right: 0;
+}
+
 footer {/*position: absolute; bottom: 0; left: 0; */width: 100%; background: #333; padding: 35px 0;}
 .footerWrap {width: 1260px; margin: 0 auto;}
 .footerWrap:after {display: block; content:""; clear: both;}
