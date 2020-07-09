@@ -29,7 +29,7 @@
 				<li><a href="enterpriseInfoForm.jsp">기업정보</a></li>
 				<li><a href="productListForm.jsp">판매목록</a></li>
 				<li><a href="asListForm.jsp">AS센터</a></li>
-				<li class="active"><a href="noticeForm.jsp">공지사항</a></li>
+				<li class="active"><a href="/WJElectronics/client/cliNotice.do?pagenumber=1">공지사항</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				
@@ -51,5 +51,31 @@
 			</ul>
 		</div>
 	</nav>
+	<!-- 게시판 부분 -->
+	<div class="container">
+		<div class="row">
+			<table class="table table-striped"
+				style="text-align: center; border: 1px solid #dddddd">
+				<thread>
+				<tr>
+					<th style="background-color: #eeeeee; text-align: center;">번호</th>
+					<th style="background-color: #eeeeee; text-align: center;">제목</th>
+					<th style="background-color: #eeeeee; text-align: center;">작성일</th>
+				</tr>
+				</thread>
+				<tbody>
+					<c:if test="${not empty vo}">
+						<c:forEach var="item" items="${vo}">
+							<tr>
+								<td>${item.clno}</td>
+								<td>${item.title}</td>
+								<td>${item.sdate}</td>
+							</tr>
+						</c:forEach>
+					</c:if>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </body>
 </html>

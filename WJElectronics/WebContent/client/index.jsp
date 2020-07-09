@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width", initial-scale="1" />
+<link rel="stylesheet" href="../Resources/css/index.css">
 <link rel="stylesheet" href="../Resources/css/bootstrap.css">
 <script src = "../Resources/jquery-3.3.1.js"></script>
 <script src = "../Resources/js/bootstrap.js"></script>
@@ -95,7 +96,7 @@
 		<div>
 			<div class="jumbotron" style="padding-top: 20px; margin-top: 50px;">
 				<h1 align="left">WJ Electronics</h1>
-				<p>메인 페이지 꾸미기</p>
+				<p>메인 페이지 꾸미기</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			</div>
 		</div>
 	</div>

@@ -3,15 +3,35 @@ ul{list-style:none; margin:0px; padding:0px;}
 .sns li {float:left;}
 .dept01{float:left;}
 .dept01 li{float:left;}
-.dept01 ul{display:none;position:relative; left:-200px;}
+.dept01 ul{display:none; position:relative; left:-200px;}
 .dept01 li:hover > ul {display:block;}
 .dept02 li{position:relative; width:100%; left:200px;}
 .dept03 li{position:relative; left:270px; top:-70px;}
-ul li a{text-decoration:none; display:block; width:110px;height:30px;line-height: 30px;text-align:center;}
+ul li a{text-decoration:none; display:block; width:110px; height:30px; line-height: 30px; text-align:center;}
 nav ul{padding-top:10px;}
+.navbar-default {
+    background-color: #74e2fe;
+    /* border-color: #74e2fe; */
+}
 #topNav {
 	width:100%;
 	position:fixed;
 	top:0;
 	left:0;
 }
+/* * {
+    margin: 0;
+} */
+html, body {
+    height: 100%;
+}
+/* .wrapper {
+    min-height: 100%;
+    height: 100%;
+    margin: 0 auto -155px;
+} */
+.bottom {
+	box-shadow: 0px 0px 20px 5px rgba(102, 186, 255, 0.4);
+    height: 100px;
+}
+.copyright {text-align:center; line-height:100px;}
