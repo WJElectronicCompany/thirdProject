@@ -17,7 +17,11 @@ public class CliNoticeAction implements CommandAction {
 		
 		int i = Integer.parseInt(request.getParameter("pagenumber"));
 		ArrayList<ClientNoticeVO> result  = clientNoticeDao.getNoticeList(i);
+		int cnt = clientNoticeDao.getListCount();
+		int pageSize = 10;
 		
+		request.setAttribute("pageSize", pageSize);
+		request.setAttribute("count", cnt);
 		request.setAttribute("pageNum", i);
 		request.setAttribute("vo", result);
 		
