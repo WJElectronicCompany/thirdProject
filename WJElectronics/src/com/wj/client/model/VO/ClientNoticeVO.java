@@ -1,5 +1,6 @@
 package com.wj.client.model.VO;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ClientNoticeVO {
@@ -7,7 +8,7 @@ public class ClientNoticeVO {
 	private String id;
 	private String title;
 	private String content;
-	private Date sdate;
+	private String sdate;
 	
 	public String getClno() {
 		return clno;
@@ -33,11 +34,12 @@ public class ClientNoticeVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getSdate() {
+	public String getSdate() {
 		return sdate;
 	}
 	public void setSdate(Date sdate) {
-		this.sdate = sdate;
+		SimpleDateFormat s = new SimpleDateFormat("yyyy.MM.dd");
+		this.sdate = s.format(sdate);
 	}
 	
 	
