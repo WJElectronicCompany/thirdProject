@@ -1,12 +1,14 @@
 package com.wj.client.model.VO;
 
+import java.util.Date;
+
 public class AsVO {
 	private int asNo;
 	private String title;
 	private String writer;
 	private String product;
 	private String content;
-	private String date;
+	private Date date;
 	public int getAsNo() {
 		return asNo;
 	}
@@ -37,10 +39,10 @@ public class AsVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	

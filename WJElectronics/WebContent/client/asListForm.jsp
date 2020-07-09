@@ -37,13 +37,17 @@
 				</thread>
 				<tbody>
 					<%--글 목록 가져오는 부분--%>
+					<c:if test="${not empty vo}">
+						<c:forEach var="item" items="${vo}">
+							<tr>
+								<td>${item.asNo}</td>
+								<td>${item.title}</td>
+								<td>${item.writer}</td>
+								<td>${item.date}</td>
+							</tr>
+						</c:forEach>
+					</c:if>
 					
-					<!-- <tr>
-						<td>1</td>
-						<td>안녕하세요</td>
-						<td>홍길동</td>
-						<td>2020-07-07</td>
-					</tr> -->
 				</tbody>
 			</table>
 			<!-- 페이지 넘기기 -->

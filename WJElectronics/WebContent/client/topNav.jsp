@@ -52,7 +52,7 @@
 						<li><a
 							href="/WJElectronics/client/productListForm.do?category=음향기기&pageNum=1">음향기기</a></li>
 					</ul></li>
-				<li><a href="asListForm.jsp">AS</a>
+				<li><a href="/WJElectronics/client/asListForm.do?pagenumber=1">AS</a>
 					<ul class="dept02">
 						<li><a href="#">교환</a></li>
 						<li><a href="#">반품</a></li>
