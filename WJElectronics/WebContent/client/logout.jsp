@@ -8,7 +8,9 @@
 </head>
 <body>
 	<% session.invalidate(); %>
+	
 <script>
+	sessionStorage.clear();
 	alert("로그아웃 되었습니다.");
 	location.href="index.jsp";
 </script>

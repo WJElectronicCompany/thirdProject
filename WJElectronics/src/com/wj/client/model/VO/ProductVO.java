@@ -8,6 +8,18 @@ public class ProductVO  {
     private String category;
     private String info;
     private String imageLink;
+    
+    public ProductVO() {}
+ 
+	public ProductVO(String pCode, String pName, int price, String category, String info, String imageLink) {
+		super();
+		this.pCode = pCode;
+		this.pName = pName;
+		this.price = price;
+		this.category = category;
+		this.info = info;
+		this.imageLink = imageLink;
+	}
 	public String getpCode() {
 		return pCode;
 	}

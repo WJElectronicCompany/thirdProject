@@ -61,9 +61,8 @@ public class ControllerAction extends HttpServlet {
 			com = (CommandAction) commandMap.get(command);
 			view = com.requestPro(request, response);
 		} catch (Exception e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
 	}

@@ -9,74 +9,42 @@
 <link rel="stylesheet" href="../Resources/css/bootstrap.css">
 <script src="../Resources/jquery-3.3.1.js"></script>
 <script src="../Resources/js/bootstrap.js"></script>
-<script src ="../Resources/script.js"></script>
+<script src="../Resources/script.js"></script>
 <title>WJ 전자</title>
 </head>
 <body>
-	<nav class="navbar navbar-default">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="index.jsp">WJElectronics</a>
-		</div>
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="enterpriseInfoForm.jsp">기업정보</a></li>
-				<li><a href="productListForm.jsp">판매목록</a></li>
-				<li><a href="asListForm.jsp">AS센터</a></li>
-				<li><a href="noticeForm.jsp">공지사항</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
+	<header>
+		<jsp:include page="topNav.jsp"></jsp:include>
+	</header>
 
-				<c:if test="${sessionScope.id == null }">
-					<li><a href="loginForm.jsp">로그인</a></li>
-					<li><a href="joinForm.jsp">회원가입</a></li>
-				</c:if>
-				<c:if test="${sessionScope.id != null }">
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false"> ${sessionScope.id } 님 <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/WJElectronics/client/mypage.do?id=${sessionScope.id }">내 정보</a></li>
-							<li><a href="logout.jsp">로그아웃</a></li>
-						</ul></li>
-				</c:if>
-			</ul>
-		</div>
-	</nav>
-	
 	<div class="container">
 		<div align="center">
 			<div class="jumbotron" style="padding-top: 20px; margin-top: 50px;">
 				<h3 align="center">회원 가입</h3>
-				<form action="/WJElectronics/client/join.do?cmd=join" method="post" name="joinForm" onsubmit="return joinInputCheck()">
-					<input type="hidden" name="checkedID" id="checkedID"/>
+				<form action="/WJElectronics/client/join.do?cmd=join" method="post"
+					name="joinForm" onsubmit="return joinInputCheck()">
+					<input type="hidden" name="checkedID" id="checkedID" />
 					<table border="1">
 						<tr>
-							<td align="right">아이디 </td>
-							<td><input type="text" name="id" size="20" id="id" />&nbsp; 
-								<input type="button" value="중복확인" onclick= "idDoubleCheck(this.form.id.value)" /></td>
+							<td align="right">아이디</td>
+							<td><input type="text" name="id" size="20" id="id" />&nbsp;
+								<input type="button" value="중복확인"
+								onclick="idDoubleCheck(this.form.id.value)" /></td>
 						</tr>
 						<tr>
-							<td align="right">패스워드 </td>
+							<td align="right">패스워드</td>
 							<td><input type="password" name="pw" id="pass" /></td>
 						</tr>
 						<tr>
-							<td align="right">패스워드 확인 </td>
+							<td align="right">패스워드 확인</td>
 							<td><input type="password" name="repw" id="repass" /></td>
 						</tr>
 						<tr>
-							<td align="right">이름 </td>
+							<td align="right">이름</td>
 							<td><input type="text" name="name" id="name" /></td>
 						</tr>
 						<tr>
-							<td align="right">전화번호 </td>
+							<td align="right">전화번호</td>
 							<td><select name="tel1" id="tel1">
 									<option value="02">02</option>
 									<option value="010">010</option>
@@ -89,31 +57,38 @@
 								<input type="text" name="tel3" size="5" id="tel3" /></td>
 						</tr>
 						<tr>
-							<td align="right">이메일 </td>
+							<td align="right">이메일</td>
 							<td><input type="text" name="email" id="email" /></td>
 						</tr>
 						<tr>
-							<td align="right">우편번호 </td>
-							<td><input type="text" name="zipcode" size="20" id="zipcode" />&nbsp; <input
-								type="button" value="찾기" onclick="zipCheck()" /></td>
+							<td align="right">우편번호</td>
+							<td><input type="text" name="zipcode" size="20" id="zipcode" />&nbsp;
+								<input type="button" value="찾기" onclick="zipCheck()" /></td>
 						</tr>
 						<tr>
-							<td align="right">주소1 </td>
-							<td><input type="text" name="address1" size="50" id="address1" /></td>
+							<td align="right">주소1</td>
+							<td><input type="text" name="address1" size="50"
+								id="address1" /></td>
 						</tr>
 						<tr>
-							<td align="right">주소2 </td>
-							<td><input type="text" name="address2" size="30" id="address2" /></td>
+							<td align="right">주소2</td>
+							<td><input type="text" name="address2" size="30"
+								id="address2" /></td>
 						</tr>
 						<tr>
-							<td colspan="2" align="center">
-								<input type="submit" value="회원가입" />&nbsp;&nbsp; 
-								<input type="reset" value="다시입력" /></td>
+							<td colspan="2" align="center"><input type="submit"
+								value="회원가입" />&nbsp;&nbsp; <input type="reset" value="다시입력" /></td>
 						</tr>
 					</table>
-				</form>					
+				</form>
 			</div>
 		</div>
+	</div>
+
+	<div>
+		<footer>
+			<jsp:include page="footer.jsp"></jsp:include>
+		</footer>
 	</div>
 </body>
 </html>

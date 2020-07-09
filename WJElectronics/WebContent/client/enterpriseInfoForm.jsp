@@ -7,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width" , initial-scale="1" />
 <link rel="stylesheet" href="../Resources/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" href="../Resources/prodictListStyle.css?ver=1" />
+<link rel="stylesheet" href="../Resources/css/index.css?ver=1">
 <script src="../Resources/jquery-3.3.1.js"></script>
 <script src="../Resources/js/bootstrap.js"></script>
 <script src="../Resources/script.js"></script>
@@ -22,238 +25,227 @@ th, td {
 	padding: 10px;
 }
 
- #bodycontents-companyinfo {
- 	margin: 0;
+.bodycontents-companyinfo {
+	margin: 0;
 	padding: 0;
-	float:right;
-	width:80%;
+	float: right;
+	width: 70%;
 	font-size: 20px;
 }
 
- #bodycontents-companyhistory {
- 	margin: 0;
-	padding: 0;
-	float:right;
-	width:80%;
-	font-size: 20px;
-	
-}  
-#bodycontents-vision {
- 
+.bodycontents-companyhistory {
 	margin: 0;
 	padding: 0;
-	float:right;
-	width:80%;
+	float: right;
+	width: 70%;
 	font-size: 20px;
-	
-}  
+}
 
-#bodycontents-map{
+.bodycontents-vision {
+	margin: 0;
+	padding: 0;
+	float: right;
+	width: 70%;
+	font-size: 20px;
+}
+
+.bodycontents-map {
 	margin: 10px;
 	padding: 0;
 }
 
-/* .menu {
-	float:left;
-	width:20%;
+.menu {
+	float: left;
+	width: 20%;
 	font-size: 20px;
-	
-} */
+}
 
+<
+style>.li1 {
+	list-style: none
+}
 
+.li2 {
+	font-size: 10px;
+}
 </style>
-<script>
-	//bada는 document.getElementById('somenu1')받음
 
-	function look(bada) {//toggle은 항상 이렇게
-		if (bada.style.display == "none") {//숨어있으면
-			bada.style.display = "block"//보여줘
-		} else {
-			bada.style.display = "none"//안숨었으면 숨어
-		}
-	}/*fuction-end  */
-	
-	
-	</script>
 
 </head>
 <body>
+
 	<!--헤더-->
-	<nav class="navbar navbar-default">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="index.jsp">WJElectronics</a>
-		</div>
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="enterpriseInfoForm.jsp">기업정보</a></li>
-				<li><a href="productListForm.jsp">판매목록</a></li>
-				<li><a href="asListForm.jsp">AS센터</a></li>
-				<li><a href="noticeForm.jsp">공지사항</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-
-				<c:if test="${sessionScope.id == null }">
-					<li><a href="loginForm.jsp">로그인</a></li>
-					<li><a href="joinForm.jsp">회원가입</a></li>
-				</c:if>
-				<c:if test="${sessionScope.id != null }">
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false"> ${sessionScope.id } 님 <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">내 정보</a></li>
-							<li><a href="logout.jsp">로그아웃</a></li>
-						</ul></li>
-				</c:if>
-			</ul>
-		</div>
-	</nav>
+	<header>
+		<jsp:include page="topNav.jsp"></jsp:include>
+	</header>
 	<!--헤더 끝-->
-<br>
-	<!--배너  -->
-	<div class="container" style="width:30%; height:30%; margin:auto;" >
+	<br>
 
-		<div id="myCarousel" class="carousel slide" data-ride="carousel" >
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-			<ol class="carousel-inner">
-				<div class="item active">
-					<img src="clientimg/11.jpg"/>
-				</div>
-				<div class="item">
-					<img src="clientimg/22.jpg"/>
-				</div>
-				<div class="item">
-					<img src="clientimg/33.jpg"/>
-				</div>
-			</ol>
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-			</a> <a class="right carousel-control" href="#myCarousel"
-				data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right"></span>
-			</a>
+
+	<section class="menu" id="new">
+		<h3>
+			<span>NEW ARRIVAL</span> 회사 소개
+		</h3>
+
+
+		<section id="cat1">
+			<div id="cat_title">WJElectronics</div>
+
+			<ul>
+				<li><div class="menu-li1">
+						<span><a href="#">대표 인사말</a></span>
+					</div></li>
+				<li><div class="menu-li2">
+						<span><a href="#">WJ의 3대가치</a></span>
+					</div></li>
+				<li><div class="menu-li3">
+						<span><a href="#">WJ연혁</a></span>
+					</div></li>
+				<li><div class="menu-li4">
+						<span><a href="#">오시는 길</a></span>
+					</div></li>
+			</ul>
+		</section>
+		<!-- section cat1 -->
+
+	</section>
+	<div style="height: 100%; width: 80%; right: 0%;" align="center">
+		<!--배너  -->
+		<div class="container"
+			style="width: 40%; height: 40%; margin: auto; margin-right: 20%;">
+
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+				<ol class="carousel-inner">
+					<div class="item active">
+						<img src="../Resources/images/enterprise/11.jpg" />
+					</div>
+					<div class="item">
+						<img src="../Resources/images/enterprise/22.jpg" />
+					</div>
+					<div class="item">
+						<img src="../Resources/images/enterprise/33.jpg" />
+					</div>
+				</ol>
+				<a class="left carousel-control" href="#myCarousel"
+					data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left"></span>
+				</a> <a class="right carousel-control" href="#myCarousel"
+					data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+
 		</div>
+		<!--배너 끝-->
+		<br>
 
-	</div>
-	<!--배너 끝-->
-	<br>
-	<br>
-	<br>
 
-<!--가운데 내용-->
-	<div>
-		<div id="bodycontents-companyinfo" style="margin:50px;">
-			<!--회사 소개  -->
-			<table class="bodycontent-companyhistory" width=80%>
-				<tr align="center">
-					<td colspan="2"><h1>WJEletronics 대표 장우진</h1><br><img src="clientimg/1.jpg" width=30% height=150px/></td>
+		<!--가운데 내용-->
+		<div>
+			<div class="bodycontents-companyinfo" id="bodycontents-cominfo">
+				<!--회사 소개  -->
+				<table class="bodycontent-companyhistory" width=80%>
+					<tr align="center">
+						<td colspan="2"><h1>WJEletronics 대표 장우진</h1> <br> <img
+							src="../Resources/images/enterprise/44.jpg" width=30%
+							height=200px /> <br>
+							<h2>"사람이 미래를 만든다"</h2> <br></td>
 
-				</tr>
+					</tr>
 
-				<tr align="center">
-					<td colspan=2><br>
-					<br>
-						<h2>"사람이 미래를 만든다"</h2> <br> <br>
-						<h3>라는 말은
-							저희 기업 신념입니다.</h3><br>
-							<br>
-							
-							기업은 이윤을 추구하기 위해 존재하지만, 결코 사람보다 우선시 될 수 없습니다.<br> WJ의 직원은 가족이자 자산이라는 생각으로 기업을 운영하고 있습니다.<br>
-							더 나은 WJ,발전하는 WJ가 되도록 노력하겠습니다.<br>
+					<tr align="center">
+						<td colspan=2><br> <br>
+
+							<h3>라는 말은 저희 기업 신념입니다.</h3> <br> <br> 기업은 이윤을 추구하기 위해
+							존재하지만, 결코 사람보다 우선시 될 수 없습니다.<br> WJ의 직원은 가족이자 자산이라는 생각으로 기업을
+							운영하고 있습니다.<br> 더 나은 WJ,발전하는 WJ가 되도록 노력하겠습니다.<br></td>
+				</table>
+			</div>
+			<br> <br> <br>
+
+			<div class="bodycontents-companyhistory" id="bodycontents-comhistory">
+				<!--회사 연혁  -->
+				<table width=80% border=1>
+					<tr align="center">
+						<td colspan="2"><h1>회사 연혁</h1></td>
+
+					</tr>
+
+					<tr align="center">
+						<td><h2>2015</h2></td>
+						<td>장우진 대표,회사 설립(2015.xx.xx)<br> 첫 제품출시(2015.xx.xx)
 						</td>
-			</table>
-		</div>
-		<br>
-		<br>
-		<br>
-		
-		<div id="bodycontents-companyhistory" style="margin:50px;" >
-			<!--회사 연혁  -->
-			<table width=80% border=1>
-				<tr align="center">
-					<td colspan="2"><h1>회사 연혁</h1></td>
+					</tr>
 
-				</tr>
-
-				<tr align="center">
-					<td><h2>2015</h2></td>
-					<td>장우진 대표,회사 설립(2015.xx.xx)<br> 첫 제품출시(2015.xx.xx)
-					</td>
-				</tr>
-
-				<tr align="center">
-					<td><h2>2016</h2></td>
-					<td>장우진 대표,회사 설립(2015.xx.xx)<br> 첫 제품출시(2015.xx.xx)
-					</td>
-				</tr>
-				<tr align="center">
-					<td><h2>2017</h2></td>
-					<td>장우진 대표,회사 설립(2015.xx.xx)<br> 첫 제품출시(2015.xx.xx)
-					</td>
-				</tr>
-				<tr align="center">
-					<td><h2>2018</h2></td>
-					<td>장우진 대표,회사 설립(2015.xx.xx)<br> 첫 제품출시(2015.xx.xx)
-					</td>
-				</tr>
-				<tr align="center">
-					<td><h2>2019</h2></td>
-					<td>장우진 대표,회사 설립(2015.xx.xx)<br> 첫 제품출시(2015.xx.xx)
-					</td>
-				</tr>
+					<tr align="center">
+						<td><h2>2016</h2></td>
+						<td>모니터 출시 <br>
+						</td>
+					</tr>
+					<tr align="center">
+						<td><h2>2017</h2></td>
+						<td>장우진 대표,회사 설립(2015.xx.xx)<br> 첫 제품출시(2015.xx.xx)
+						</td>
+					</tr>
+					<tr align="center">
+						<td><h2>2018</h2></td>
+						<td>장우진 대표,회사 설립(2015.xx.xx)<br> 첫 제품출시(2015.xx.xx)
+						</td>
+					</tr>
+					<tr align="center">
+						<td><h2>2019</h2></td>
+						<td>장우진 대표,회사 설립(2015.xx.xx)<br> 첫 제품출시(2015.xx.xx)
+						</td>
+					</tr>
 
 
-			</table>
+				</table>
+				<br> <br>
+
+			</div>
 
 
 		</div>
-	
 
-	</div>
-	<br>
-	<br>
-	<br>
-	<div id="bodycontents-vision">
-	<table width=80% >
-			<tr align="center">
-				<td colspan="3"><h1>WJ의 3대 핵심가치</h1></td>
+		<div class="bodycontents-vision" id="bodycontents-vi"
+			style="display: none;">
+			<table width=80%>
+				<tr align="center">
+					<td colspan="3"><h1>WJ의 3대 핵심가치</h1></td>
 
-			</tr>
-			<tr align="center">
-				<td><img src="clientimg/1.jpg" style="width: 70%; height: 50%;" /></td>
-				<td><img src="clientimg/2.jpg" style="width: 70%; height: 50%;" /></td>
-				<td><img src="clientimg/3.jpg" style="width: 70%; height: 50%;" /></td>
-			</tr>
-			<tr align="center">
-				<td><h2>사람</h2></td>
-				<td><h2>신뢰</h2></td>
-				<td><h2>끈기</h2></td>
-			</tr>
-		</table>
+				</tr>
+				<tr align="center">
+					<td><img src="../Resources/images/enterprise/1.jpg"
+						style="width: 70%; height: 50%;" /></td>
+					<td><img src="../Resources/images/enterprise/2.jpg"
+						style="width: 70%; height: 50%;" /></td>
+					<td><img src="../Resources/images/enterprise/3.jpg"
+						style="width: 70%; height: 50%;" /></td>
+				</tr>
+				<tr align="center">
+					<td><h2>사람</h2></td>
+					<td><h2>신뢰</h2></td>
+					<td><h2>끈기</h2></td>
+				</tr>
+			</table>
+
+		</div>
+
+
+		<div class="bodycontents-maps" id="bodycontents-mp">
+			<h1>WJ전자에 오시는 길</h1>
 			<br>
-<br>
-<br>
-	</div>
+			<div id="map"
+				style="width: 400px; height: 350px; margin: auto; padding: auto;"></div>
 
-
-<div id="bodycontents-maps">
-
-<div id="map" style="width:30%; height:350px; margin:auto; padding:auto;"></div>
-
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1612a47582f976311be9a8dd6ec0b816"></script>
-<script>
+			<script type="text/javascript"
+				src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1612a47582f976311be9a8dd6ec0b816"></script>
+			<script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(37.570711, 126.992291), // 지도의 중심좌표
@@ -287,42 +279,55 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
     resultDiv.innerHTML = message;
     
 });
+
+
+$(document).ready(function() {
+      $('.bodycontents-companyinfo').show(); //페이지를 로드할 때 표시할 요소
+      $('.bodycontents-vision').hide(); //페이지를 로드할 때 숨길 요소
+      $('.bodycontents-companyhistory').hide();
+      $('.bodycontents-maps').hide();
+      
+      
+      $('.menu-li2').click(function() {
+         $('.bodycontents-companyinfo').hide(); 
+         $('.bodycontents-vision').show(); 
+         $('.bodycontents-companyhistory').hide();
+         $('.bodycontents-maps').hide();
+         /* return false;*/      
+         });
+      $('.menu-li3').click(function() {
+         $('.bodycontents-companyinfo').hide(); 
+         $('.bodycontents-vision').hide(); 
+         $('.bodycontents-companyhistory').show();
+         $('.bodycontents-maps').hide();
+         /* return false;*/      
+         });
+      $('.menu-li4').click(function() {
+         $('.bodycontents-companyinfo').hide(); 
+         $('.bodycontents-vision').hide(); 
+         $('.bodycontents-companyhistory').hide();
+         $('.bodycontents-maps').show();
+         /* return false;*/      
+         });
+      $('.menu-li1').click(function() {
+         $('.bodycontents-companyinfo').show(); 
+         $('.bodycontents-vision').hide(); 
+         $('.bodycontents-companyhistory').hide();
+         $('.bodycontents-maps').hide();
+         /* return false;*/      
+         });
+   });
+
 </script>
 
-
-<br>
-<br>
-<br>
-</div>
-	<!-- <div class="menu">
-
-		<div class="menu1" id="bigmenu1"
-			onclick="look(document.getElementById('somenu1'))">CEO</div>
-
-		<div class="menu2" id="somenu1" style="display: none">
-			<ul>
-				<li><a href="#bodycontents-companyinfo" onclick="look(document.getElementById('bodycontents-companyinfo'))">CEO인사말</a></li>
-			</ul>
 		</div>
+	</div>
 
-		<div class="menu1" id="bigmenu2"
-			onclick="look(document.getElementById('somenu2'))">WJElectronics</div>
-
-		<div class="menu2" id="somenu2" style="display: none" >
-			<ul>
-				<li><a href="#bodycontents-vision" onclick="look(document.getElementById('bodycontents-vision')">WJE소개</a></li>
-				<li><a href="#bodycontents-companyhistory" onclick="look(document.getElementById('bodycontents-companyhistory')">WJE연혁</a></li>
-			</ul>
-		</div>
-
-		<div class="menu1" id="bigmenu2">찾아오시는 길</div>
-			<ul>
-				<li><a href="#bodycontents-vision" onclick="look(document.getElementById('bodycontents-maps'))">회사위치</a></li>
-			</ul>
-	</div> -->
-
-
-
+	<div>
+		<footer>
+			<jsp:include page="footer.jsp"></jsp:include>
+		</footer>
+	</div>
 
 </body>
 </html>

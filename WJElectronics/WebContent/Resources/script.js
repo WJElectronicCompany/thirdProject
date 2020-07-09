@@ -206,3 +206,31 @@ function modifyPasswordInputCheck() {
 		return false;
 	}
 }
+
+function checkLogin() {
+	if(!sessionStorage.getItem("id")) {
+		alert("로그인 후 이용하실 수 있습니다.");
+		location.href="loginForm.jsp";
+		return false;
+	}
+}
+
+function addProductToBasket(pcode, pname, price, category, info, imageLink) {
+	url = "/WJElectronics/client/addShoppingBasket.jsp?&pcode="+pcode + "&pname="+pname+"&price="+price+"&category="+category+"&info="+encodeURIComponent(info)+"&imageLink="+encodeURIComponent(imageLink);
+	window.open(url,"post",'status=no, height=' + popupHeight  + ', width=' + popupWidth  + ', left='+ popupX + ', top='+ popupY);
+}
+
+function clearProductToBasket() {
+	url = "/WJElectronics/client/clearShoppingBasket.jsp";
+	window.open(url,"post",'status=no, height=' + popupHeight  + ', width=' + popupWidth  + ', left='+ popupX + ', top='+ popupY);
+}
+
+function removeProductToBasket(index) {
+	url = "/WJElectronics/client/removeProduct.jsp?index="+index;
+	window.open(url,"post",'status=no, height=' + popupHeight  + ', width=' + popupWidth  + ', left='+ popupX + ', top='+ popupY);
+}
+
+function doPayment(id) {
+	url = "/WJElectronics/client/payment.do?id=" +id;
+	window.open(url,"post",'status=no, height=' + popupHeight+200  + ', width=' + popupWidth+200  + ', left='+ popupX+200 + ', top='+ popupY+200);
+}
