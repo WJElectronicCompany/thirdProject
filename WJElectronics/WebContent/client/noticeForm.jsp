@@ -21,11 +21,6 @@
 	<!-- 게시판 부분 -->
 	<br />
 	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
 	<div class="container">
 		<div class="row">
 			<table class="table table-striped"
@@ -42,8 +37,7 @@
 						<c:forEach var="item" items="${vo}">
 							<tr>
 								<td>${item.clno}</td>
-								<td>${item.title}</td>
-								<!-- a태그 -->
+								<td><a href="/WJElectronics/client/cliNoticeOne.do?clno=${item.clno }">${item.title}</a></td>
 								<td>${item.sdate}</td>
 							</tr>
 						</c:forEach>

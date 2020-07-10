@@ -64,6 +64,7 @@ public class ClientNoticeDAO {
 		return arr;
 	}
 	
+	//게시물 총 몇개냐?
 	public int getListCount() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -86,6 +87,38 @@ public class ClientNoticeDAO {
 			if(conn!=null) try {conn.close();} catch(SQLException sqle1) {}
 		}
 		return result;
+	}
+
+	//게시물 하나 불러오기
+	public ClientNoticeVO getNoticeOne(int i) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ClientNoticeVO cn = null;
+		try {
+			conn = ConnUtil.getConnection();
+
+			pstmt = conn.prepareStatement(
+					"SELECT * FROM cli_Notice where clno=?");
+			pstmt.setInt(1, i);
+			rs = pstmt.executeQuery();
+			if(rs.next())  {
+				cn = new ClientNoticeVO(); // 불러올 클라이언트 노티스
+				cn.setClno(rs.getString("clno"));
+				cn.setTitle(rs.getString("title"));
+				Date d = new Date(rs.getDate("sdate").getTime());
+				cn.setSdate(d);
+				cn.setContent(rs.getString("content"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(rs!=null) try {rs.close();} catch(SQLException sqle1) {}
+			if(pstmt!=null) try {pstmt.close();} catch(SQLException sqle1) {}
+			if(conn!=null) try {conn.close();} catch(SQLException sqle1) {}
+		}
+		return cn;
 	}
 	
 	/*
