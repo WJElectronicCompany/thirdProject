@@ -37,7 +37,7 @@ public class ClientNoticeDAO {
 			conn = ConnUtil.getConnection();
 			pstmt = conn.prepareStatement(
 					"SELECT * FROM "
-					+ "(SELECT ROWNUM as A, clno, title, sdate FROM Cli_Notice) "
+					+ "(SELECT ROWNUM as A, clno, title, sdate FROM Cli_Notice order by clno desc) "
 					+ "WHERE A >= ? AND A <= ?");
 			
 			pstmt.setInt(1, 10 * (pageNum-1) + 1);
@@ -121,87 +121,4 @@ public class ClientNoticeDAO {
 		return cn;
 	}
 	
-	/*
-	// 게시글 번호 가져오는 함수
-
-	   public int getNext() { 
-	      Connection conn = null;
-	      PreparedStatement pstmt = null;
-	      ResultSet rs = null;
-	      
-	      
-	      
-	      String SQL = "SELECT id FROM as1 ORDER BY id DESC";
-
-	      try {
-	         conn = ConnUtil.getConnection();
-	         pstmt = conn.prepareStatement(SQL);
-
-	         rs = pstmt.executeQuery();
-
-	         if(rs.next()) {
-
-	            return rs.getInt(1) + 1;
-
-	         }
-
-	         return 1;//첫 번째 게시물인 경우
-
-	      } catch (Exception e) {
-
-	         e.printStackTrace();
-
-	      }
-
-	      return -1; //데이터베이스 오류
-
-	   }*/
-
-	   
-/*
-	   //실제로 글을 작성하는 함수
-
-	   public int write(String title, String id, String product, String content) { 
-	      
-	      Connection conn = null;
-	      PreparedStatement pstmt = null;
-	      ResultSet rs = null;
-	      
-	      String SQL = "INSERT INTO as1 VALUES(?, ?, ?, ?, ?, ?, ?)";
-
-	      try {
-
-	         conn = ConnUtil.getConnection();
-	         pstmt = conn.prepareStatement(SQL);
-	         rs = pstmt.executeQuery();
-	         
-	         pstmt.setInt(1, getNext());
-
-	         pstmt.setString(2, title);
-
-	         pstmt.setString(3, id);
-
-	         pstmt.setString(4, product);
-
-	         pstmt.setString(5, content);
-
-	         pstmt.setDate(6, rs.getDate("sdate"));
-	         
-	         pstmt.setInt(7,1);
-
-	         
-
-	         return pstmt.executeUpdate();
-
-	         
-
-	      } catch (Exception e) {
-
-	         e.printStackTrace();
-
-	      }
-
-	      return -1; //데이터베이스 오류
-
-	   }*/
 }

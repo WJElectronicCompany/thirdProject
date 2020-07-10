@@ -17,7 +17,11 @@ public class AsListAction implements CommandAction {
 		
 		int i = Integer.parseInt(request.getParameter("pagenumber"));
 		ArrayList<AsVO> result  = clientNoticeDao.getNoticeList(i);
+		int cnt = clientNoticeDao.getNext() - 1;
+		int pageSize = 10;//한 페이지 안에 들어가는 게시글 수
 		
+		request.setAttribute("pageSize", pageSize); 
+		request.setAttribute("count", cnt); //총 게시글 수 
 		request.setAttribute("pageNum", i);
 		request.setAttribute("vo", result);
 		

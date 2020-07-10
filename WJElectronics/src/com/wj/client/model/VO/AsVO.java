@@ -1,5 +1,6 @@
 package com.wj.client.model.VO;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AsVO {
@@ -8,7 +9,7 @@ public class AsVO {
 	private String writer;
 	private String product;
 	private String content;
-	private Date date;
+	private String date;
 	public int getAsNo() {
 		return asNo;
 	}
@@ -39,11 +40,12 @@ public class AsVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getDate() {
+	public String getDate() {	
 		return date;
 	}
 	public void setDate(Date date) {
-		this.date = date;
+		SimpleDateFormat s = new SimpleDateFormat("yyyy.MM.dd");
+		this.date = s.format(date);
 	}
 	
 }

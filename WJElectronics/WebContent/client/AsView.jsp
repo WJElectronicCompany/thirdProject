@@ -43,7 +43,8 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td colspan="3">${vo.sdate }</td>
+						<td colspan="1">${vo.writer }</td>
+						<td colspan="2">${vo.date }</td>
 					</tr>
 
 					<tr>
@@ -51,13 +52,13 @@
 					</tr>
 
 					<tr>
-						<td><c:if test="${vo.clno > 1}">
-								<a href="/WJElectronics/client/cliNoticeOne.do?clno=${vo.clno +1 }">이전글
+						<td><c:if test="${vo.asNo > 1}">
+								<a href="/WJElectronics/client/asView.do?asno=${vo.asNo + 1 }">이전글
 								</a>
 							</c:if></td>
-						<td><a href="/WJElectronics/client/cliNotice.do?pagenumber=1">목록</a></td>
-						<td><c:if test="${vo.clno < lastPage}">
-								<a href="/WJElectronics/client/cliNoticeOne.do?clno=${vo.clno -1 }">다음글</a>
+						<td><a href="/WJElectronics/client/asListForm.do?pagenumber=1">목록</a></td>
+						<td><c:if test="${vo.asNo < lastPage}">
+								<a href="/WJElectronics/client/asView.do?asno=${vo.asNo - 1 }">다음글</a>
 							</c:if></td>
 					</tr>
 

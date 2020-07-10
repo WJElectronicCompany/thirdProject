@@ -24,6 +24,7 @@ public class ControllerAction extends HttpServlet {
 	
 	@SuppressWarnings("unchecked")
 	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
 		String props = config.getInitParameter("propertyConfig");
 		
 		Properties pr = new Properties();
@@ -33,7 +34,7 @@ public class ControllerAction extends HttpServlet {
 			f = new FileInputStream(new File(path, props));
 			pr.load(f);
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("no");
 		}
 		Iterator<Object> keyIter = pr.keySet().iterator();
 		
@@ -61,7 +62,7 @@ public class ControllerAction extends HttpServlet {
 			com = (CommandAction) commandMap.get(command);
 			view = com.requestPro(request, response);
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("requestPro error");
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);

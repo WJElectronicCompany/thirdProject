@@ -207,6 +207,16 @@ function modifyPasswordInputCheck() {
 	}
 }
 
+function asLoginCheck() {
+	if(!sessionStorage.getItem("id")) {
+		alert("로그인 후 사용해 주세요");
+		location.href="loginForm.jsp";
+		return false;
+	}
+}
+
+
+
 function checkLogin() {
 	if(!sessionStorage.getItem("id")) {
 		alert("로그인 후 이용하실 수 있습니다.");
