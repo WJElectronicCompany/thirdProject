@@ -36,7 +36,7 @@ public class ProductDAO {
 			pstmt = conn.prepareStatement(
 					"SELECT * FROM "
 					+ "(SELECT ROWNUM as \"prow\", pcode, pname, price, category, info, imageLink FROM product) "
-					+ "WHERE \"prow\" >= ? AND \"prow\" <= ?");
+					+ "WHERE \"prow\" >= ? AND \"prow\" <= ? ORDER BY category, pcode");
 			pstmt.setInt(1, 8 * (pageNum-1) + 1);
 			pstmt.setInt(2, 8 * pageNum);
 			rs = pstmt.executeQuery();
@@ -130,7 +130,6 @@ public class ProductDAO {
 		int result = 0;
 		try {
 			conn = ConnUtil.getConnection();
-
 			pstmt = conn.prepareStatement(
 					"SELECT count(*) FROM product WHERE category = ?");
 			pstmt.setString(1, category);
@@ -146,6 +145,35 @@ public class ProductDAO {
 			if(conn!=null) try {conn.close();} catch(SQLException sqle1) {}
 		}
 		return result;
+	}
+	
+	// 제품코드로 제품 정보 조회
+	public ProductVO getProductInfo(String productCode) {
+		ProductVO product = new ProductVO();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement(
+					"SELECT * FROM product WHERE pCode = ?");
+			pstmt.setString(1, productCode);
+		
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				product.setpCode(productCode);
+				product.setpName(rs.getString("pName"));
+				product.setPrice(rs.getInt("price"));
+				product.setCategory(rs.getString("category"));
+				product.setInfo(rs.getString("info"));
+				product.setImageLink(rs.getString("imageLink"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return product;
 	}
 	
 }

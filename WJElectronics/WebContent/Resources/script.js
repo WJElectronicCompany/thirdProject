@@ -207,16 +207,6 @@ function modifyPasswordInputCheck() {
 	}
 }
 
-function asLoginCheck() {
-	if(!sessionStorage.getItem("id")) {
-		alert("로그인 후 사용해 주세요");
-		location.href="loginForm.jsp";
-		return false;
-	}
-}
-
-
-
 function checkLogin() {
 	if(!sessionStorage.getItem("id")) {
 		alert("로그인 후 이용하실 수 있습니다.");
@@ -225,8 +215,36 @@ function checkLogin() {
 	}
 }
 
-function addProductToBasket(pcode, pname, price, category, info, imageLink) {
-	url = "/WJElectronics/client/addShoppingBasket.jsp?&pcode="+pcode + "&pname="+pname+"&price="+price+"&category="+category+"&info="+encodeURIComponent(info)+"&imageLink="+encodeURIComponent(imageLink);
+function openProductInfoForm(productCode) {
+	var height = window.screen.height/1.6;
+	var width = window.screen.width/2.4;
+	var X = (window.screen.width /2) - (width / 2);
+	var Y= (window.screen.height /2) - (height / 2);
+	
+	url = "/WJElectronics/client/productInfoForm.do?productCode=" + productCode;
+	window.open(url,"post",'status=no, height=' + height + ', width=' + width + ', left='+ X + ', top='+ Y);
+}
+
+function checkInputOfProductQuantity(index) {
+	var quantity = document.getElementById("quantityOfProduct"+index).value;
+	var reg = /^(\s|\d)+$/;
+	if(!quantity.replace(/(\s*)/gi, "")) {
+		alert("수량을 입력해 주세요");
+		document.getElementById("quantityOfProduct"+index).focus();
+		document.reload();
+	}
+	if(reg.test(quantity)) {
+		if(quantity <= 0) {
+			alert("수량은 1개 이상이여야 합니다.");
+			document.reload();
+		}
+	} else {
+		alert("수량은 1이상의 숫자로 입력해 주세요.");
+		document.reload();
+	}
+}
+function addProductToBasket(pcode, pname, price,index, category, info, imageLink) {
+	url = "/WJElectronics/client/addShoppingBasket.jsp?&pcode="+pcode + "&pname="+pname+"&price="+price+"&quantity="+document.getElementById("quantityOfProduct"+index).value +"&category="+category+"&info="+encodeURIComponent(info)+"&imageLink="+encodeURIComponent(imageLink);
 	window.open(url,"post",'status=no, height=' + popupHeight  + ', width=' + popupWidth  + ', left='+ popupX + ', top='+ popupY);
 }
 
@@ -240,7 +258,15 @@ function removeProductToBasket(index) {
 	window.open(url,"post",'status=no, height=' + popupHeight  + ', width=' + popupWidth  + ', left='+ popupX + ', top='+ popupY);
 }
 
-function doPayment(id) {
-	url = "/WJElectronics/client/payment.do?id=" +id;
-	window.open(url,"post",'status=no, height=' + popupHeight+200  + ', width=' + popupWidth+200  + ', left='+ popupX+200 + ', top='+ popupY+200);
+function doPayment(id, pCode, price, cmd, index) {
+	var height = window.screen.height/1.6;
+	var width = window.screen.width/2.4;
+	var X = (window.screen.width /2) - (width / 2);
+	var Y= (window.screen.height /2) - (height / 2);
+	
+	var quantity = document.getElementById("quantityOfProduct"+index).value;
+	
+	url = "/WJElectronics/client/payment.do?id=" + id + "&productCode=" + pCode +"&price="+price+"&quantity="+quantity+"&cmd="+cmd+"&index="+index;
+	window.open(url,"post",'status=no, height=' + height + ', width=' + width + ', left='+ X + ', top='+ Y);
 }
+

@@ -21,11 +21,9 @@
 <script>
 	function reply(index) {
 		document.getElementById("commentLine" + index).style.display = '';
-		document.getElementById("com").style.display = 'none';
 	}
 	function cancel(index) {
 		document.getElementById("commentLine" + index).style.display = 'none';
-		document.getElementById("com").style.display = '';
 	}
 </script>
 
@@ -93,7 +91,9 @@
 
 				<c:if test="${not empty comment}">
 					<c:forEach var="comment" items="${comment}">
-
+						<%
+						 index++;
+						%>
 						<tr id="trId<%=index%>">
 							<!-- 아이디, 작성날짜 -->
 							<td>
@@ -107,7 +107,7 @@
 							<td>
 								<div id="btn" style="text-align: center;">
 									<c:if test="${sessionScope.id !=null}">
-										<button onclick="reply('<%=index%>')" style="">답변</button>
+										<button onclick="reply('<%=index%>')">답변</button>
 										<br>
 									</c:if>
 									<c:if test="${comment.id == sessionScope.id}">
@@ -124,7 +124,7 @@
 							<tr bgcolor="#ffffff" style="display: none " id="commentLine<%=index%>">
 
 								<!-- 아이디-->
-								<td valign="middle"><input type="hidden" name="parent"
+								<td valign="middle"><img src="../image/point.png"><input type="hidden" name="parent"
 									value="${comment.cono}"> <input type="hidden"
 									name="asno" value="${vo.asNo}"> <input type="hidden"
 									name="id" value="${sessionScope.id}">
@@ -180,7 +180,7 @@
 				<c:if test="${sessionScope.id !=null}">
 					<form method="post"
 						action="/WJElectronics/client/commentWriteAction.do?de=0">
-						<tr bgcolor="#F5F5F5" id="com">
+						<tr bgcolor="#F5F5F5">
 							<!-- 아이디-->
 							<td valign="middle"><input type="hidden" name="asno"
 								value="${vo.asNo}"> <input type="hidden" name="id"

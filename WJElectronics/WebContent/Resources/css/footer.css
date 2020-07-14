@@ -1,0 +1,95 @@
+footer {/*position: absolute; bottom: 0; left: 0; */width: 100%; background: #333; padding: 35px 0; bottom: 0;}
+.footerWrap {width: 1260px; margin: 0 auto;}
+.footerWrap::after {display: block; content:""; clear: both;}
+.logo {float: left; margin-right: 20px;}
+.info{float: left; color: #999; font-size: 12px;}
+.info li{ font-size: 12px; list-style:none;}
+.info a, footer .info a:hover, footer .info a:focus {color: #999; text-decoration: none;}
+.footLink {padding-bottom: 17px; padding-left: 0px;}
+.footLink li {float: left; padding-right: 10px;}
+.footLink li:not(:first-child) {padding: 0 10px 0 11px; border-left: 1px solid #ccc;}
+.footLink::after {display: block; content:""; clear: both;}
+.footLink li.point a {font-weight:bold;color:#b42f4a;}
+footer address {padding-bottom: 5px; font-style: normal;}
+footer address li {float: left; padding-right: 10px; list-style:none;}
+footer address:after {display: block; content: ""; clear: both;}
+
+/* -------------------------------------------------modal css---------------------------------------------- */
+.modalBackdrop {position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 998; background: rgba(0,0,0,.3);}
+.modal {display: none; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 999;}
+.modal ul, .modal ol {list-style: none;}
+.modalDialog {position: relative; width: 770px; margin: 30px auto; padding: 60px; background: #fff;}
+#modalPrivacy .modalDialog, .modalDialog.popup {width: 940px;}
+#modalMedia .modalDialog, .modalDialog.popup {width: 940px;}
+.modalDialog.popup {margin: 0;}
+.modal .close, .modalDialog .close {position: absolute; top: 40px; right: 40px;}
+.modalOpen {overflow: hidden;}
+.modalOpen .modal {overflow-x: hidden; overflow-y: auto;}
+#container h1, .modalDialog > h1 {margin-top: 37px; padding-bottom: 28px; text-align: center;}
+.modalDialog > h1 {margin-top: 0;}
+h1 > strong, .modalDialog > h1 > strong {display: inline-block; position: relative; padding: 0 70px; font-family: 'Nanum Myeongjo Bold'; font-size: 28px; vertical-align: top;}
+#leaf_left, #leaf_right {display: block; position: absolute; top: 50%; content: ""; width: 60px; height: 22px; margin-top: -13px; vertical-align: top;}
+#leaf_left {left: 0;margin-right: 10px; /* background: url(../../image/leaf-left.jpg) no-repeat 0 0; */}
+#leaf_right {right: 0; margin-left: 10px; /* background: url(../../image/leaf-right.jpg) no-repeat 0 0; */}
+.selPrivachWr {padding-bottom: 25px; text-align: right;}
+.selPrivachWr .selectric-wrapper, .selPrivachWr .select {width: 260px;}
+.ifWr {overflow: auto; width: 100%; height: 500px;padding-right: 10px;}
+.privacy, .privacy p {font-size: 16px; line-height: 24px;}
+p.introTb {margin-top: 28px; padding-bottom: 17px; font-family: "Noto Sans Bold"; font-size: 18px;}
+.privacy .orderWr {overflow: hidden; width: 100%; padding: 25px 22px;background-color: #f4f4f4;}
+.privacy .orderWr ol {float: left; width: 50%;}
+.privacy .orderWr ol li {font-size: 16px; line-height: 24px;}
+.privacy .orderWr ol > li:not(:first-child) {padding-top: 12px;}
+.privacyCon {margin-top: 30px; padding-top: 30px;}
+.privacyCon h1 {padding-bottom: 8px; font-size: 16px; font-family: "Noto Sans Bold";}
+.privacyCon h2 {margin-top: 12px; font-size: 16px; color: #111;}
+.privacyCon h2 + table {margin-top: 10px;}
+.privacyCon table + h2 {margin-top: 15px;}
+.privacyCon .desc {font-size: 16px; line-height: 24px;}
+.privacyCon table {margin-top: 15px;}
+.privacyCon .additionalTxt {padding-top: 20px; color: #666;}
+.privacyCon .txtD1 li {font-size: 16px; line-height: 24px;}
+.privacyCon .txtD1 > li {margin-left: 18px; text-indent: -18px;}
+.privacyCon .txtD1.han > li {margin-left: 22px; text-indent: -22px;}
+.privacyCon .txtD1 li:not(:last-child) {margin-bottom: 6px;}
+.privacyCon .txtD1 > li > * {text-indent: 0;}
+.privacyCon .txtD1 > li .additionalTxt {padding-top: 6px;}
+.privacyCon .txtD2 {margin-top: 6px;}
+.privacyCon .txtD2 > li {position: relative; padding-left: 10px; color: #666;}
+.privacyCon .txtD2 > li:before {display: block; position: absolute; top: 0; left: 0; content: "- "; height: 100%;}
+.privacyCon .desc + .txtD1 {margin-top: 12px;}
+.privacyCon table.table.conTbMulti.noPd td {padding: 0;}
+.popup .privacyCon table.table.conTbMulti.noPd td {padding: 0;}
+.table.noPd td li {width: 100%; padding: 11px 0 10px; text-align: center;}
+.table.noPd td li:not(:first-child) {border-top: 1px solid #ddd;}
+.privacyCon .table.conTbRow th {background-color: #f4f4f4;}
+button {overflow: visible;margin: 0;background-color: transparent;border: none;-webkit-appearance: button;cursor: pointer;font: inherit;color: inherit;}
+button::-moz-focus-inner,
+input::-moz-focus-inner {padding: 0; border: 0;}
+textarea{resize: none;}
+.privacyCon table.table tr {display: table-row;}
+.privacyCon table.table th, .privacyCon table.table td {display: table-cell; border-bottom-color: #ddd;}
+.privacyCon table.table colgroup {display: table-column-group;}
+.privacyCon table.table thead tr {position: static; top: 0; left: 0;}
+.privacyCon table.table thead th {background-color: #f4f4f4;}
+.privacyCon table.table tbody th {padding: 11px 20px 10px; border-bottom-color: #ddd; text-align: left;}
+.privacyCon table.table.conTbRow td {padding-top: 11px; padding-bottom: 10px;}
+.privacyCon .table {border-top: 1px solid #bbb; border-bottom: 1px solid #bbb;}
+.privacyCon .table th, .privacyCon .table td {padding: 11px 20px 10px;text-align: center;}
+.privacyCon .table tr {padding: 0; border-bottom: none;}
+.privacyCon .table td {border-bottom: 1px solid #ddd; padding: 11px 20px 10px;}
+.privacyCon .table td.subject {text-align: left;}
+.privacyCon .table th {line-height: 18px;}
+.privacyCon .table > tbody > tr > td:first-child:not(.noData) {display: table-cell;}
+.privacyCon .table.tableRow th, .privacyCon .table.tableRow td {padding: 11px 20px;}
+.privacyCon .table.conTbMulti tr > td:not(:first-child),
+.privacyCon .table.conTbMulti thead tr > th:not(:first-child){border-left: 1px solid #ddd;}
+.privacyCon .table.conTbMulti tr:before {display: none;}
+.privacyCon table.table.conTbMulti tbody th {display:table-cell;}
+.privacyCon table.table.conTbMulti td {position: relative; padding: 11px 20px 10px; font-size: 14px; line-height: 18px;}
+.privacyCon table.table.conTbMulti td:before {display: none;}
+.privacyCon .contsWrap .table tr > td:not(:last-child) {border-right: none;}
+.privacyCon table.table.conTbMulti.mobWide td {padding-left: 0;}
+.privacyCon table.table.conTbMulti.mobNarrow td {padding-left: 0;}
+.privacyCon .table.conTbMulti > tbody > tr:last-child > td {border-bottom: 1px solid #bbb;}
+.privacyCon table.table.conTbMulti.mobWide td {padding-left: 20px;}

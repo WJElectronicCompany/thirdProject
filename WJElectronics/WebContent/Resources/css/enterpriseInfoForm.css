@@ -1,0 +1,91 @@
+.li1 {
+	list-style: none
+}
+
+.li2 {
+	font-size: 10px;
+}
+
+
+section#new {
+	height: 650px;
+	margin-top: 20px;
+	border-top: solid 2px #9bc32a;
+}
+
+section#new h3 {
+	margin: 20px 0 0 35px;
+}
+
+section#new h3 span {
+	color: #80a727;
+}
+
+section#new .item {
+	float: left;
+	text-align: center;
+	margin: 20px 0 0 32px;
+}
+
+section#new .item .subject {
+	margin-top: 10px;
+	color: #80a727;
+}
+
+section#new .item .comment {
+	margin-top: 5px;
+	color: #888888;
+}
+
+section#new .item .price {
+	margin-top: 5px;
+	font-weight: bold;
+}
+
+/* 筌롫뗄�뵥 �굜�꼹�쀯㎘占� */
+section#main {
+	width: 1500px;
+	margin: auto;
+}
+/* �넫�슣瑜� 燁삳똾�믤�⑥쥓�봺 + 筌롫뗄�뵥 占쎌뵠沃섎챷占� + �⑤벊占쏙옙沅쀯옙鍮�/雅뚯눊而� 占쎌뵠甕겹끋�뱜 */
+section#cat1 {
+	width: 215px;
+	float: left;
+	margin-top: 15px;
+	font-weight: bold;
+}
+
+section#cat1 #cat_title {
+	padding: 12px;
+	background-color: #0000ff;
+	color: #ffffff;
+	text-align: center;
+}
+
+section#cat1 li {
+	color: #666666;
+	padding: 7px 0 7px 30px;
+	border-bottom: solid 1px #cccccc;
+}
+
+div#footer {
+       width: 640px;
+       position: fixed;
+       bottom: 0px;
+       left: 50%;
+}
+
+.bodycontents-companyhistory table{
+	font-size:25px;
+	
+}
+.bodycontents-vision img{
+	margin:20px;
+	padding:20px;
+	
+}
+.bodycontents-vision tr,td{
+	margin:10px 10px 30px 30px;
+	padding:20px;
+	
+}

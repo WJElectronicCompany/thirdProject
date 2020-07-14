@@ -5,6 +5,7 @@ public class ProductVO  {
 	private String pCode;
 	private String pName;
     private int price;
+    private int quantity;
     private String category;
     private String info;
     private String imageLink;
@@ -20,6 +21,18 @@ public class ProductVO  {
 		this.info = info;
 		this.imageLink = imageLink;
 	}
+	public ProductVO(String pCode, String pName, int price, int quantity, String category, String info,
+			String imageLink) {
+		super();
+		this.pCode = pCode;
+		this.pName = pName;
+		this.price = price;
+		this.quantity = quantity;
+		this.category = category;
+		this.info = info;
+		this.imageLink = imageLink;
+	}
+
 	public String getpCode() {
 		return pCode;
 	}
@@ -39,6 +52,15 @@ public class ProductVO  {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 	public String getCategory() {
 		return category;
 	}

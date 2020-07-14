@@ -4,10 +4,14 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
+<style>
+	html {overflow:hidden;}
+</style>
 </head>
 <body>
 	<c:if test="${result == 1}">

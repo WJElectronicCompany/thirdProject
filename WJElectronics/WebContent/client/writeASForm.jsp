@@ -11,12 +11,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- 뷰 포트 -->
-<meta name="viewport" content="width=device-width", initial-scale="1" />
-<!-- 스타일시트 참조 -->
-<link rel="stylesheet" href="../Resources/css/bootstrap.css">
-<script src = "../Resources/jquery-3.3.1.js"></script>
-<script src  = "../Resources/js/bootstrap.js"></script>
-<script src  = "../Resources/script.js"></script>
 <script>
 function WriteASInputCheck() {
 	if(document.getElementById("title").value.replace(/(\s*)/gi, "") == "") {

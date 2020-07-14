@@ -10,6 +10,7 @@ public class WriteASAction implements CommandAction {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
+		request.setCharacterEncoding("utf-8");
 		
 		AsDAO asDao = AsDAO.getInstance();
 		int result = asDao.write(request.getParameter("title"), request.getParameter("id"), request.getParameter("pr_name"), request.getParameter("content"));

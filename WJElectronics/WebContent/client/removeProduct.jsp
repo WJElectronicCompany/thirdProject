@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>상품 구매</title>
 <script>
 function confirm() {
 	opener.location.reload();
@@ -15,10 +15,15 @@ function confirm() {
 </script>
 </head>
 <body>
-	<h4 align="center">해당 상품을 취소했습니다.</h4>
-		<% 	ArrayList<ProductVO> productList = (ArrayList<ProductVO>)session.getAttribute("productList");
+	<% 	ArrayList<ProductVO> productList = (ArrayList<ProductVO>)session.getAttribute("productList");
 			productList.remove(Integer.parseInt(request.getParameter("index")));%>
-		
-	<div align="center"><input type="button" value="확인" onclick="confirm()" /></div>
+	<%	if(request.getParameter("cmd") == null) { %> 
+		<h4 align="center">해당 상품을 취소했습니다.</h4>
+		<div align="center"><input type="button" value="확인" onclick="confirm()" /></div>
+	<% } else {%> 
+		<h4 align="center">이용해 주셔서 감사합니다. <br /> 구매한 상품은 주문 내역에서 확인하실 수 있습니다.</h4>
+		<div align="center"><input type="button" value="확인" onclick="confirm()" /></div>
+	<% } %>
+
 </body>
 </html>

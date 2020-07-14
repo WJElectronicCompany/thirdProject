@@ -1,30 +1,30 @@
-ul{list-style:none; margin:0px; padding:0px;}
-.sns {float:left; text-align:right;}
-.sns li {float:left;}
+#topNav ul{list-style:none; margin:0px; padding:0px;}
+#topNav ul li a{text-decoration:none; display:block; width:110px; height:30px; line-height: 30px; text-align:center;}
+#topNav ul li {width:110px;}
+#TOP_sns {float:left; text-align:right;}
+#TOP_sns li {float:left;}
 .dept01{float:left;}
 .dept01 li{float:left;}
 .dept01 ul{display:none; position:relative; left:-200px;}
 .dept01 li:hover > ul {display:block;}
 .dept02 li{position:relative; width:100%; left:200px;}
-.dept03 li{position:relative; left:270px; top:-70px;}
-ul li a{text-decoration:none; display:block; width:110px; height:30px; line-height: 30px; text-align:center;}
+.dept03 li{position:relative; left:270px; top:-60px;}
+/* ul li a{text-decoration:none; display:block; width:110px; height:30px; line-height: 30px; text-align:center;}
+ul li {width:110px;} */
+/* ul li:hover{background-color:#FFE08C;} */
 nav ul{padding-top:10px;}
 .navbar-default {
     background-color: #74e2fe;
-    /* border-color: #74e2fe; */
 }
-/* #topNav {
-   width:100%;
-   position:fixed;
-   top:0;
-   left:0;
-} */
 
 html, body {
 	 margin: 0;
     height: 100%;
 }
-
+.tableColorstyle:not(.nonestyle) {
+   background-color: #ffffff;
+   opacity: 0.8;
+}
 * {
 box-sizing: border-box;
 -webkit-box-sizing: border-box;
@@ -38,25 +38,3 @@ padding-bottom: 19px; /* footer height */
 ol {
 margin: 0;
 }
-footer {
-position: relative;
-bottom: 0;
-left: 0;
-right: 0;
-}
-
-footer {/*position: absolute; bottom: 0; left: 0; */width: 100%; background: #333; padding: 35px 0;}
-.footerWrap {width: 1260px; margin: 0 auto;}
-.footerWrap:after {display: block; content:""; clear: both;}
-.logo {float: left; margin-right: 20px;}
-.info, footer .familySite {float: left; color: #999; font-size: 12px; font-family: "Noto Sans Bold";}
-.info li, footer .familySite li, footer .copyright { font-size: 12px; font-family: "Noto Sans Bold";}
-.info a, footer .info a:hover, footer .info a:focus {color: #999; text-decoration: none;}
-.footLink {padding-bottom: 17px;}
-.footLink li {float: left; padding-right: 10px;}
-.footLink li:not(:first-child) {padding: 0 10px 0 11px; border-left: 1px solid #ccc;/* background: url(/lib/images/common/foot_slash.png) no-repeat 0 50%; */}
-.footLink:after {display: block; content:""; clear: both;}
-.footLink li.point a {font-weight:bold;color:#b42f4a;}
-footer address {padding-bottom: 5px; font-style: normal;}
-footer address li {float: left; padding-right: 10px; list-style:none;}
-footer address:after {display: block; content: ""; clear: both;}

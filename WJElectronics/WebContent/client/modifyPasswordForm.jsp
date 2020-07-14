@@ -4,11 +4,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width", initial-scale="1" />
-<link rel="stylesheet" href="../Resources/css/bootstrap.css">
-<script src = "../Resources/jquery-3.3.1.js"></script>
-<script src  = "../Resources/js/bootstrap.js"></script>
-<script src  = "../Resources/script.js"></script>
 <title>비밀번호 변경</title>
 </head>
 <body>

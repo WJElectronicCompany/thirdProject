@@ -8,9 +8,13 @@
 <script src="../Resources/jquery-3.3.1.js"></script>
 <script src="../Resources/js/bootstrap.js"></script>
 <script src="../Resources/script.js"></script>
-<nav class="navbar navbar-default" id="topNav">
+<style>
+ body{background: url('../Resources/images/bae.jpg')
+}
+</style>
+<nav class="navbar navbar-default" id="topNav" style="background:#333;">
 	<div class="nav navbar-nav navbar-right" id="Top_sns">
-		<ul class="sns">
+		<ul class="sns" id="TOP_sns">
 			<li class="fb"><a href="https://www.facebook.com">Facebook</a></li>
 			<li class="blog"><a href="http://blog.naver.com">Blog</a></li>
 			<li class="insta"><a href="https://instagram.com/pascucci_kr">Instagram</a></li>
@@ -35,13 +39,12 @@
 			<ul class="dept01">
 				<li><a href="enterpriseInfoForm.jsp">기업 정보</a>
 					<ul class="dept02">
-						<li><a href="#">브랜드 스토리</a></li>
-						<li><a href="#">CEO 메세지</a></li>
-						<li><a href="#">WJ전자 히스토리</a></li>
-						<li><a href="#">연락처 및 약도</a></li>
+						<li><a href="/WJElectronics/client/enterpriseInfoForm.jsp#1">브랜드 스토리</a></li>
+						<li><a href="/WJElectronics/client/enterpriseInfoForm.jsp#2">CEO 메세지</a></li>
+						<li><a href="/WJElectronics/client/enterpriseInfoForm.jsp#3">WJ전자 히스토리</a></li>
+						<li><a href="/WJElectronics/client/enterpriseInfoForm.jsp#4">연락처 및 약도</a></li>
 					</ul></li>
-				<li><a
-					href="/WJElectronics/client/productListForm.do?category=all&pageNum=1">상품</a>
+				<li><a href="/WJElectronics/client/productListForm.do?category=all&pageNum=1">상품</a>
 					<ul class="dept02">
 						<li><a
 							href="/WJElectronics/client/productListForm.do?category=모니터&pageNum=1">모니터</a></li>
@@ -79,16 +82,16 @@
 			</c:if>
 
 			<c:if test="${sessionScope.id != null }">
-				<a href="shoppingBasket.jsp"><img
-					src="../Resources/images/shoppingBasket.png" height="20" width="20"></a>
+				<li><a href="purchase.do?cmd=getPurchaseList&buyerId=<%=session.getAttribute("id")%>&pageNum=1" >주문 내역</a></li>
+				<li><a href="shoppingBasket.jsp"><img
+					src="../Resources/images/shoppingBasket.png" height="20" width="20"></a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false"> ${sessionScope.id } 님 <span
 						class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a
-							href="/WJElectronics/client/mypage.do?id=${sessionScope.id }">내
-								정보</a></li>
+							href="/WJElectronics/client/mypage.do?id=${sessionScope.id }">내 정보</a></li>
 						<li><a href="logout.jsp">로그아웃</a></li>
 					</ul></li>
 			</c:if>

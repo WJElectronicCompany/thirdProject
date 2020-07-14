@@ -6,7 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title> </title>
-
+<style>
+	html {overflow:hidden;}
+</style>
 </head>
 <body>
 	<div align="center">

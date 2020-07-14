@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> </title>
+<title>상품 구매</title>
 <script>
 function confirm() {
 	opener.location.reload();
@@ -15,9 +15,15 @@ function confirm() {
 </script>
 </head>
 <body>
-	<h4 align="center">장바구니를 비웠습니다.</h4>
-	<% 	session.removeAttribute("productList");
+	<%	session.removeAttribute("productList");
 		session.setAttribute("productList", new ArrayList<ProductVO>());%>
-	<div align="center"><input type="button" value="확인" onclick="confirm()" /></div>
+	<%if(request.getParameter("cmd") == null) { %> 
+		<h4 align="center">장바구니를 비웠습니다.</h4>
+		<div align="center"><input type="button" value="확인" onclick="confirm()" /></div>
+		
+	<% } else {%> 
+		<h4 align="center">이용해 주셔서 감사합니다. <br /> 구매한 상품은 주문 내역에서 확인하실 수 있습니다.</h4>
+		<div align="center"><input type="button" value="확인" onclick="confirm()" /></div>
+	<% } %>
 </body>
 </html>

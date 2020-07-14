@@ -1,0 +1,30 @@
+div #main {
+   width:80%;
+   margin-top: 5%;
+   margin-bottom: 5%;
+}
+
+aside #left #cat_title {
+    padding:12px;
+    text-align:center;
+}
+
+div #main #right tr.title {
+    height:50px;
+    background-color:silver;
+}
+
+
+div #main #right tr.items {
+    height:80px;
+    border-bottom:solid 2px #cccccc;
+}
+
+div #main #right table {
+    width:100%;
+    margin:10px 0 0 0;
+    border-top:solid 2px;
+    border-left:solid 2px;
+    border-right:solid 2px;	
+    border-bottom:solid 2px ;		
+}

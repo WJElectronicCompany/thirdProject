@@ -5,12 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width" , initial-scale="1" />
-<link rel="stylesheet" href="../Resources/css/bootstrap.css">
-<script src="../Resources/jquery-3.3.1.js"></script>
-<script src="../Resources/js/bootstrap.js"></script>
-<script src="../Resources/script.js"></script>
 <title>WJ 전자</title>
+<style>
+.colorstyle:not(.nonestyle) {
+   background-color: #ffffff;
+   opacity: 0.8;
+}
+</style>
 </head>
 <body>
 	<header>
@@ -24,7 +25,7 @@
 				<form action="/WJElectronics/client/join.do?cmd=join" method="post"
 					name="joinForm" onsubmit="return joinInputCheck()">
 					<input type="hidden" name="checkedID" id="checkedID" />
-					<table border="1">
+					<table border="1" class="colorstyle">
 						<tr>
 							<td align="right">아이디</td>
 							<td><input type="text" name="id" size="20" id="id" />&nbsp;

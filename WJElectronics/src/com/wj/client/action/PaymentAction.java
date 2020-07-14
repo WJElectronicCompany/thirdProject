@@ -26,8 +26,12 @@ public class PaymentAction implements CommandAction {
 		request.setAttribute("email", email);
 		request.setAttribute("phone", phone);
 		request.setAttribute("address", address);
+		request.setAttribute("cmd", request.getParameter("cmd"));
+		request.setAttribute("price", request.getParameter("price"));
+		request.setAttribute("quantity", request.getParameter("quantity"));
+		request.setAttribute("index", request.getParameter("index"));
 		
-		System.out.println(client);
 		return "/client/doPaymentAPI.jsp";
+		
 	}
 }
