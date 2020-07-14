@@ -34,11 +34,14 @@
 				</thread>
 				<tbody>
 					<c:if test="${not empty vo}">
+					<c:set var="i" value="1"/>
+					<c:set var="p" value="${pageNum }"/>				
 						<c:forEach var="item" items="${vo}">
 							<tr>
-								<td>${item.clno}</td>
+								<td>${i + (p-1)*10 }</td>
 								<td><a href="/WJElectronics/client/cliNoticeOne.do?clno=${item.clno }">${item.title}</a></td>
 								<td>${item.sdate}</td>
+								<c:set var="i" value="${i+1 }"/>
 							</tr>
 						</c:forEach>
 					</c:if>

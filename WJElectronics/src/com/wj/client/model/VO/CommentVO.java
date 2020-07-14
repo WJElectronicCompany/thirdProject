@@ -8,6 +8,7 @@ public class CommentVO {
 	private int asno;
 	private String id;
 	private String date;
+	private int parent;
 	private String content;
 	public int getCono() {
 		return cono;
@@ -39,6 +40,12 @@ public class CommentVO {
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	public int getParent() {
+		return parent;
+	}
+	public void setParent(int parent) {
+		this.parent = parent;
 	}
 	
 	

@@ -51,12 +51,12 @@
 					</tr>
 
 					<tr>
-						<td><c:if test="${vo.clno > 1}">
+						<td><c:if test="${vo.clno < lastPage}">
 								<a href="/WJElectronics/client/cliNoticeOne.do?clno=${vo.clno +1 }">이전글
 								</a>
 							</c:if></td>
 						<td><a href="/WJElectronics/client/cliNotice.do?pagenumber=1">목록</a></td>
-						<td><c:if test="${vo.clno < lastPage}">
+						<td><c:if test="${vo.clno > 1}">
 								<a href="/WJElectronics/client/cliNoticeOne.do?clno=${vo.clno -1 }">다음글</a>
 							</c:if></td>
 					</tr>

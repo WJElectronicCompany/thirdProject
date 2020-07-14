@@ -16,6 +16,7 @@
 			<div class="jumbotron" style="padding-top: 20px; margin-top: 50px;">
 				<h1 align="left">WJ Electronics</h1>
 				<p>메인 페이지 꾸미기</p>
+				
 				<br> <br> <br> <br> <br> <br> <br>
 				<br> <br> <br> <br> <br> <br> <br>
 				<br> <br> <br> <br> <br> <br> <br>

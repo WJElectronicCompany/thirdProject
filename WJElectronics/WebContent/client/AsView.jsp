@@ -18,6 +18,18 @@
 <script src="../Resources/js/bootstrap.js"></script>
 <script src="../Resources/script.js"></script>
 <title>WJ 전자</title>
+<script>
+	function reply(index) {
+		document.getElementById("commentLine" + index).style.display = '';
+		document.getElementById("com").style.display = 'none';
+	}
+	function cancel(index) {
+		document.getElementById("commentLine" + index).style.display = 'none';
+		document.getElementById("com").style.display = '';
+	}
+</script>
+
+
 </head>
 <body>
 
@@ -35,7 +47,7 @@
 				style="text-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
-						<th colspan="3"
+						<th colspan="4"
 							style="background-color: #eeeeee; text-align: center;">
 							${vo.title }</th>
 					</tr>
@@ -43,22 +55,24 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td colspan="1">${vo.writer }</td>
-						<td colspan="2">${vo.date }</td>
+						<td>작성자</td>
+						<td width="250">${vo.writer }</td>
+						<td>작성일</td>
+						<td width="250">${vo.date }</td>
 					</tr>
 
 					<tr>
-						<td colspan="3" style="height: 350px;">${vo.content }</td>
+						<td colspan="4" style="height: 350px;">${vo.content }</td>
 					</tr>
 
 					<tr>
-						<td><c:if test="${vo.asNo > 1}">
+						<td><c:if test="${vo.asNo < lastPage}">
 								<a href="/WJElectronics/client/asView.do?asno=${vo.asNo + 1 }">이전글
 								</a>
 							</c:if></td>
-						<td><a
+						<td colspan="2"><a
 							href="/WJElectronics/client/asListForm.do?pagenumber=1">목록</a></td>
-						<td><c:if test="${vo.asNo < lastPage}">
+						<td><c:if test="${vo.asNo > 1}">
 								<a href="/WJElectronics/client/asView.do?asno=${vo.asNo - 1 }">다음글</a>
 							</c:if></td>
 					</tr>
@@ -69,68 +83,121 @@
 
 		<!-- 댓글  -->
 		<!-- 댓글 부분 -->
+		<%
+			int index = 0;
+		%>
 		<div id="comment">
-			<table border="1" bordercolor="lightgray">
+			<table class="table table-striped"
+				style="text-align: center; border: 1px solid #dddddd">
 				<!-- 댓글 목록 -->
+
 				<c:if test="${not empty comment}">
 					<c:forEach var="comment" items="${comment}">
 
-						<tr>
+						<tr id="trId<%=index%>">
 							<!-- 아이디, 작성날짜 -->
-							<td width="150">
+							<td>
 								<div>
 									${comment.id}<br> <font size="2" color="lightgray">${comment.date}</font>
 								</div>
 							</td>
 							<!-- 본문내용 -->
-							<td width="550">
-								<div class="text_wrapper">${comment.content}</div>
-							</td>
-							<%-- <!-- 버튼 -->
-							<td width="100">
+							<td width="600" align="left">${comment.content}</td>
+							<!-- 버튼 -->
+							<td>
 								<div id="btn" style="text-align: center;">
-									<a href="#">[답변]</a><br>
-									<!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
-									<c:if test="${comment.comment_id == sessionScope.sessionID}">
-										<a href="#">[수정]</a>
+									<c:if test="${sessionScope.id !=null}">
+										<button onclick="reply('<%=index%>')" style="">답변</button>
 										<br>
-										<a href="#">[삭제]</a>
+									</c:if>
+									<c:if test="${comment.id == sessionScope.id}">
+										<!-- <a href="#">[수정]</a>
+										<br> -->
+										<a
+											href="/WJElectronics/client/commentWriteAction.do?de=1&cono=${comment.cono}&asno=${vo.asNo}">[삭제]</a>
 									</c:if>
 								</div>
-							</td> --%>
+							</td>
 						</tr>
+
+						<form method="post" action="/WJElectronics/client/commentWriteAction.do?de=2">
+							<tr bgcolor="#ffffff" style="display: none " id="commentLine<%=index%>">
+
+								<!-- 아이디-->
+								<td valign="middle"><input type="hidden" name="parent"
+									value="${comment.cono}"> <input type="hidden"
+									name="asno" value="${vo.asNo}"> <input type="hidden"
+									name="id" value="${sessionScope.id}">
+									<div>${sessionScope.id}</div></td>
+								<!-- 본문 작성-->
+								<td width="600">
+									<div>
+										<textarea name="content" placeholder="답글 내용" rows="4"
+											cols="70"></textarea>
+									</div>
+								</td>
+								<!-- 댓글 등록 버튼 -->
+								<td valign="middle"><input type="submit" value="등록">
+									<button onclick="cancel('<%=index%>')">취소</button></td>
+							</tr>
+						</form>
+
+
+						<!-- 대댓글for문 -->
+						<c:forEach var="cc" items="${ccomment}">
+							<c:if test="${comment.cono == cc.parent }">
+								<tr>
+									<!-- 아이디, 작성날짜 -->
+									<td>
+										<div>
+											<img src="../image/comment.png"> ${cc.id}<br> <font
+												size="2" color="lightgray">${cc.date}</font>
+										</div>
+									</td>
+									<!-- 본문내용 -->
+									<td width="600" align="left">${cc.content}</td>
+									<!-- 버튼 -->
+									<td>
+										<div id="btn" style="text-align: center;">
+											<c:if test="${cc.id == sessionScope.id}">
+												<!-- <a href="#">[수정]</a>
+										<br> -->
+												<a
+													href="/WJElectronics/client/commentWriteAction.do?de=1&cono=${cc.cono}&asno=${vo.asNo}">[삭제]</a>
+											</c:if>
+										</div>
+									</td>
+								</tr>
+							</c:if>
+						</c:forEach>
 
 					</c:forEach>
 				</c:if>
 
-				<%-- <!-- 로그인 했을 경우만 댓글 작성가능 -->
+
+
+				<!-- 로그인 했을 경우만 댓글 작성가능 -->
 				<c:if test="${sessionScope.id !=null}">
-					<tr bgcolor="#F5F5F5">
-						<form id="writeCommentForm">
-							<input type="hidden" name="comment_board"
-								value="${board.board_num}"> <input type="hidden"
-								name="comment_id" value="${sessionScope.sessionID}">
+					<form method="post"
+						action="/WJElectronics/client/commentWriteAction.do?de=0">
+						<tr bgcolor="#F5F5F5" id="com">
 							<!-- 아이디-->
-							<td width="150">
-								<div>${sessionScope.sessionID}</div>
-							</td>
+							<td valign="middle"><input type="hidden" name="asno"
+								value="${vo.asNo}"> <input type="hidden" name="id"
+								value="${sessionScope.id}">
+								<div>${sessionScope.id}</div></td>
 							<!-- 본문 작성-->
-							<td width="550">
+							<td width="600">
 								<div>
-									<textarea name="comment_content" rows="4" cols="70"></textarea>
+									<textarea name="content" placeholder="댓글 내용" rows="4" cols="70"></textarea>
 								</div>
 							</td>
 							<!-- 댓글 등록 버튼 -->
-							<td width="100">
-								<div id="btn" style="text-align: center;">
-									<p>
-										<a href="#" onclick="writeCmt()">[댓글등록]</a>
-									</p>
-								</div>
+							<td valign="middle"><input type="submit" value="[댓글등록]">
 							</td>
-						</form>
-					</tr>
-				</c:if> --%>
+						</tr>
+					</form>
+				</c:if>
 
 			</table>
 		</div>
